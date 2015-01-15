@@ -1,0 +1,222 @@
+BODY {
+	font : 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color : #666666;
+	margin : 0px 0px 0px 0px;
+	text-align: center;
+	background-image: url(auroraceleste.png);
+	background-repeat: repeat-x;
+} 
+.contenedor {
+	background-color: #E5E5E5;
+	position: relative;
+	width: 1000px;
+	text-align: left;
+	margin: auto;
+	height: 700px;
+}
+.cabezera {
+	position: relative;
+	height: 90px;
+	width: 980px;
+	margin: auto;
+	top: 0px;
+	padding: 10px;
+	background-color: #333333;
+}
+.cabezera1 {
+	position: relative;
+	top: 2px;
+	left: 10px;
+	height: 40px;
+	width: 700px;
+	margin: auto;
+	
+	/*border-radius: 8px 8px 8px 8px;*/
+	border-bottom-width: 3px;
+	border-bottom-style:solid;
+	border-bottom-color:#FA2C21;
+	border-left-width: 3px;
+	border-left-style:solid;
+	border-left-color:#FA2C21;
+	border-right-width: 3px;
+	border-right-style:solid;
+	border-right-color:#FA2C21;
+	border-top-width: 3px;
+	border-top-style:solid;
+	border-top-color:#FA2C21;
+}
+.cabezera2 {
+	position: relative;
+	top: 15px;
+	left: 100px;
+	height: 40px;
+	width: 700px;
+	margin: auto;
+}
+
+.cuerpo {
+	height: 500px;
+	width: 980px;
+	position: absolute;
+	left: 0px;
+	top: 190px;
+}
+.cuerpoi {
+	position: absolute;
+	width: 190px;
+	margin: auto;
+	clear:both;
+	left: 0px;
+	top: 5px;
+	background-color: #CED5D7;
+}
+.cuerpoc {
+	position: absolute;
+	height: 300px;
+	width: 720px;
+	margin: auto;
+	clear:both;
+	top: 5px;
+	float: right;
+	left: 260px;
+}
+.cuerpod {
+	background-color: #FFCC99;
+	position: absolute;
+	height: 100px;
+	width: 180px;
+	margin: auto;
+	clear:both;
+	top: 65px;
+	float: right;
+	right: 15px;
+}
+#subcontent {
+z-index: 0;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 35px;
+margin-left: 0px;
+min-height: 300px;
+background-color: #fff;
+border-bottom: 1px solid #bbb;
+border-right: 1px solid #bbb;
+border-top: 1px solid #bbb;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 5px;
+border-top-right-radius: 4px;
+border-top-left-radius: 4px;
+margin-right: 15px;
+box-shadow: 0px 0px 10px 2px rgba(167, 167, 167, 0.27);
+border-left: 1px solid #aaa;
+min-height: 300px;
+overflow-y: hidden;
+}
+
+#subcontent1 {
+margin-left: 10px;
+margin-right: 3px;
+padding-top: 15px;
+padding-bottom: 15px;
+padding-left: 5px;
+padding-right: 5px;
+margin-bottom: 5px;
+
+color: #0088cc;
+cursor: pointer;
+background-color: #ffffff;
+border-right: 1px solid #bbb;
+border-left: 1px solid #bbb;
+border-top: 1px solid #bbb;
+border-top-left-radius: 5px;
+/*border-bottom-color: transparent;*/
+border-bottom-color: #2fffff;
+border-bottom: 1px solid #fff;
+border-radius: 0px;
+left: 14px;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;
+display: table-cell;
+vertical-align: middle;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+position: relative;
+z-index: 100;
+}
+
+
+.pie {
+	background-color: #585858;
+	position: inherit;
+	height: 40px;
+	width: 940px;
+	margin: auto;
+	bottom: 0px;
+	top: 720px;
+	left: 5px;
+	padding: 20px;
+}
+.tabla1 {
+	background-color: #CCCCCC;
+	height: 110px;
+	margin: 4px;
+	padding: 4px;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: dotted;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #0033CC;
+	border-right-color: #0033CC;
+	border-bottom-color: #0033CC;
+	border-left-color: #0033CC;
+}
+.celda1 {
+	width: 50px;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: dotted;
+	border-left-style: solid;
+	border-top-color: #0066FF;
+	border-right-color: #0066FF;
+	border-bottom-color: #0066FF;
+	border-left-color: #0066FF;
+}
+.celda2 {
+	width: 50px;
+	background-image: url(../../../manchego/hostings/imagenes1/cas2.jpg);
+}
+.vinculo1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #996633;
+}
+.vinculo1:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.vinculo2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #009933;
+	text-decoration: none;
+}
+.vinculo2:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFFFF0; 
+	text-decoration: underline;
+}

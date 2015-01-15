@@ -1,0 +1,102 @@
+BODY {
+	/*BACKGROUND-IMAGE: url(imagenes/fondoweb.jpg); BACKGROUND-COLOR: #9aa942; MARGIN: 0px; BACKGROUND-REPEAT: repeat-x*/
+}
+.textoplomo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #383838; FONT-SIZE: 12px
+}
+.textofondo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #d8d399; FONT-SIZE: 12px
+}
+.textoplomo2 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #383838; FONT-SIZE: 12px
+}
+.textoverdeclaro_ {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #5f8a06; FONT-SIZE: 15px
+}
+.textolinkplomo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #383838; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.textoblanco {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 12px
+}
+.textoverdeclaro {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #5f8a06; FONT-SIZE: 12px
+}
+.textoblancochico {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 11px
+}
+.textoamarillochico {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #fffd3b; FONT-SIZE: 11px
+}
+.linkverdeclaro {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #5f8a06; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.linkverdeclaro:hover {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #333d1c; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.linkamarillochico {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #fffd3b; FONT-SIZE: 11px; TEXT-DECORATION: underline
+}
+.linkamarillochico:hover {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 11px; TEXT-DECORATION: underline
+}
+.cajaform {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND-COLOR: #c8c8c8; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #424141; FONT-SIZE: 12px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.boton {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND-COLOR: #3c3a0b; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 23px; COLOR: #ffffff; FONT-SIZE: 12px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+#container {
+	POSITION: relative; TEXT-ALIGN: left; MARGIN: 0px auto 2em; WIDTH: 500px; BACKGROUND: #fff
+}
+#header {
+	BACKGROUND: #5dc9e1; HEIGHT: 144px; COLOR: #fff
+}
+#content {
+	POSITION: relative
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.graphic {
+	PADDING-BOTTOM: 0px; TEXT-INDENT: -8000px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#prevBtn {
+	PADDING-BOTTOM: 0px; TEXT-INDENT: -8000px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#nextBtn {
+	PADDING-BOTTOM: 0px; TEXT-INDENT: -8000px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#slider {
+	
+}
+#slider UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#slider LI {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#slider LI {
+	WIDTH: 880px; HEIGHT: 738px; OVERFLOW: hidden
+}
+#prevBtn {
+	POSITION: absolute; WIDTH: 21px; DISPLAY: block; HEIGHT: 30px; TOP: 100px; LEFT: 15px
+}
+#nextBtn {
+	POSITION: absolute; WIDTH: 21px; DISPLAY: block; HEIGHT: 30px; TOP: 100px; LEFT: 15px
+}
+#nextBtn {
+	TOP: 100px; LEFT: 570px
+}
+#prevBtn A {
+	WIDTH: 21px; DISPLAY: block; BACKGROUND: url(easyslider/images/btn_prev.gif) no-repeat 0px 0px; HEIGHT: 30px
+}
+#nextBtn A {
+	WIDTH: 21px; DISPLAY: block; BACKGROUND: url(easyslider/images/btn_prev.gif) no-repeat 0px 0px; HEIGHT: 30px
+}
+#nextBtn A {
+	BACKGROUND: url(easyslider/images/btn_next.gif) no-repeat 0px 0px
+}
+#capa {
+	Z-INDEX: 1; POSITION: absolute; WIDTH: 158px; HEIGHT: 63px; TOP: 337px; LEFT: 803px
+}

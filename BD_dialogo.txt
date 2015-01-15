@@ -1,0 +1,1276 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 26-11-2014 a las 10:15:07
+-- Versión del servidor: 5.0.45
+-- Versión de PHP: 5.2.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `dialogo`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `adhesiones`
+-- 
+
+CREATE TABLE `adhesiones` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idprod` int(11) NOT NULL default '0',
+  `idautordes` int(11) NOT NULL default '0',
+  `nomautordes` char(50) collate utf8_unicode_ci default NULL,
+  `idautorori` int(11) NOT NULL default '0',
+  `nomautorori` char(50) collate utf8_unicode_ci default NULL,
+  `preg` text collate utf8_unicode_ci NOT NULL,
+  `estado` char(50) collate utf8_unicode_ci default NULL,
+  `tipo` char(50) collate utf8_unicode_ci default NULL,
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  `link` text collate utf8_unicode_ci NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `adhesiones`
+-- 
+
+INSERT INTO `adhesiones` VALUES (1, 2, 0, '', 4, 'carlos21', '', '', NULL, '2014-11-25', '');
+INSERT INTO `adhesiones` VALUES (2, 1, 0, '', 4, 'carlos21', '', '', NULL, '2014-11-25', '');
+INSERT INTO `adhesiones` VALUES (3, 1, 0, '', 5, 'jimenez2', '', '', NULL, '2014-11-25', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `aulagrado`
+-- 
+
+CREATE TABLE `aulagrado` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `aula` char(50) default NULL,
+  `grado` char(50) default NULL,
+  `turno` char(50) default NULL,
+  `codaula` char(50) default NULL,
+  `descripcion` varchar(50) NOT NULL,
+  `descrip2` varchar(30) NOT NULL,
+  `tutor` char(50) default NULL,
+  `codtutor` varchar(20) NOT NULL,
+  `tutorapoyo` varchar(25) NOT NULL,
+  `codtutorapoyo` varchar(10) NOT NULL,
+  `notas` char(50) default NULL,
+  `tipo` int(11) NOT NULL default '0',
+  `orden` int(4) NOT NULL,
+  `vacantes` int(3) NOT NULL default '35',
+  `nivel` varchar(15) NOT NULL default 'Primaria',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+
+-- 
+-- Volcar la base de datos para la tabla `aulagrado`
+-- 
+
+INSERT INTO `aulagrado` VALUES (7, '1.A', '1.', 'M', 'a1', '1ro de Primaria', '', 'Hugo Garcia Cerna', 'tutor1', '', '', NULL, 0, 10, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (8, '1.B', '1.', 'M', 'a2', '1ro de Primaria', '', 'MIGUEL CORZO CORZO', 'B2', 'CARLOS VELASQUEZ LOPEZ', 'TUFACA', NULL, 0, 11, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (9, '2.A.', '2.', 'M', 'a3', '2do de Primaria', '', 'TOMAS CERNA CHIRINOS', 'TOCECH', '', '', NULL, 0, 20, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (10, '2.B', '2.', 'M', 'a4', '2do de Primaria', '', 'MANUEL LA ROSA MARTINEZ', 'TURAMA', '', '', NULL, 0, 20, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (11, '3.A', '3.', 'M', 'a5', '3ro de Primaria', '', 'CARLOS VELASQUEZ LOPEZ', 'TUFACA', '', '', NULL, 0, 30, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (12, '3.B', '3.', 'M', 'a6', '3ro de Primaria', '', NULL, '', '', '', NULL, 0, 30, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (13, 'INGLES', '1.', 'I', 'I1', '', '', NULL, '', '', '', NULL, 0, 200, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (29, 'II.A', 'II.', 'M', 'b3', '2do de Secundaria', '', NULL, '', '', '', NULL, 0, 80, 35, 'Secundaria');
+INSERT INTO `aulagrado` VALUES (31, '4.A', '4.', 'M', 'a7', '4to de Primaria', '', 'ENRIQUE CAMARENA VASQUEZ', 'TUENEN', 'MANUEL LA ROSA MARTINEZ', 'TURAMA', NULL, 0, 40, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (27, 'I.A', 'I.', 'M', 'b1', '1ro de Secundaria', '', NULL, '', '', '', NULL, 0, 70, 35, 'Secundaria');
+INSERT INTO `aulagrado` VALUES (26, '5 A&ntilde;os', '5A', 'M', 'c1', 'Inicial 5 a&ntilde;os', '', NULL, '', '', '', 'L', 0, 9, 35, 'Inicial');
+INSERT INTO `aulagrado` VALUES (32, '4.B', '4.', 'M', 'a8', '4to de Primaria', '', NULL, '', '', '', NULL, 0, 40, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (33, '5.A', '5.', 'M', 'a9', '5to de Primaria', '', NULL, '', '', '', NULL, 0, 50, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (34, '5.B', '5.', 'M', 'a10', '5to de Primaria', '', NULL, '', '', '', NULL, 0, 50, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (35, '6.A', '6.', 'M', 'a11', '6to de Primaria', '', NULL, '', '', '', NULL, 0, 60, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (36, '6.B', '6.', 'M', 'a12', '6to de Primaria', '', NULL, '', '', '', NULL, 0, 60, 35, 'Primaria');
+INSERT INTO `aulagrado` VALUES (39, 'III.A', 'III.', 'M', 'III.A', '3ro de Secundaria', '', NULL, '', '', '', NULL, 0, 90, 35, 'Secundaria');
+INSERT INTO `aulagrado` VALUES (41, 'IV.A', 'IV.', 'M', 'IV.A', '4to de Secundaria', '', NULL, '', '', '', NULL, 0, 100, 35, 'Secundaria');
+INSERT INTO `aulagrado` VALUES (43, 'V.A', 'V.', 'M', 'V.A', '5to de Secundaria', '', NULL, '', '', '', NULL, 0, 110, 35, 'Secundaria');
+INSERT INTO `aulagrado` VALUES (44, 'c', '3.', 'M', 'cod3c', '3ro de Primaria', '', NULL, '', '', '', NULL, 0, 30, 35, 'Primaria');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cantantes`
+-- 
+
+CREATE TABLE `cantantes` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id1` int(11) NOT NULL default '0',
+  `nombre` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `biografia` text NOT NULL,
+  `recomendacion` text NOT NULL,
+  `tipo` char(50) default NULL,
+  `decada` char(50) default NULL,
+  `estilo` char(50) default NULL,
+  `fecha` char(50) default NULL,
+  `autor` char(50) default NULL,
+  `foto` varchar(50) NOT NULL,
+  `region` varchar(30) NOT NULL,
+  `partido` varchar(40) NOT NULL,
+  `partidosiglas` varchar(10) NOT NULL,
+  `grupoparla` varchar(30) NOT NULL,
+  `pase` tinyint(3) NOT NULL,
+  `i1` int(11) NOT NULL,
+  `i2` int(11) NOT NULL,
+  `i3` int(11) NOT NULL,
+  `i4` int(11) NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=384 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cantantes`
+-- 
+
+INSERT INTO `cantantes` VALUES (373, 0, 'BCP', '', '', '', NULL, NULL, 'BANCOS / FINANCIERAS', '22 Set 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (372, 0, 'empleado2', '', '', '', NULL, NULL, 'Ministerios', '10 Set 2014', 'ADMIN', '', '', '', '', '', 0, 278, 279, 0, 0);
+INSERT INTO `cantantes` VALUES (275, 0, 'Ministro de educacion', '', '', '', NULL, NULL, 'Ministerios', '10 May 2014', 'user4', '', '', '', '', '', 0, 277, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (276, 0, 'Vice ministro', '', '', '', NULL, NULL, 'Ministerios', '10 May 2014', 'user4', '', '', '', '', '', 0, 277, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (277, 0, 'Ministerio de educacion', '', '', '', NULL, NULL, 'Ministerios', '10 May 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (278, 0, 'Ministerio de salud', '', '', '', NULL, NULL, 'Ministerios', '10 May 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (279, 0, 'Ministro de salud', '', '', '', NULL, NULL, 'Ministerios', '10 May 2014', 'user4', '', '', '', '', '', 0, 278, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (280, 0, 'san borja', '', '', '', NULL, NULL, 'LIMA', '10 May 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (374, 0, 'INTERBANK', '', '', '', NULL, NULL, 'BANCOS / FINANCIERAS', '22 Set 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (287, 0, 'lima', '', '', '', NULL, NULL, 'Municipales', '02 Jun 2014', '', '', '', '', '', '', 0, 286, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (377, 0, 'Ancon', '', '', '', NULL, NULL, 'Municipalidades', '25 Nov 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (378, 0, 'Ate', '', '', '', NULL, NULL, 'Municipalidades', '25 Nov 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (379, 0, 'Barranco', '', '', '', NULL, NULL, 'Municipalidades', '25 Nov 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (295, 0, 'Ancon', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (296, 0, 'Ate', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (297, 0, 'Barranco', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (298, 0, 'Bre&ntilde;a', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (299, 0, 'Carabayllo', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (300, 0, 'Chaclacayo', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (301, 0, 'Chorrillos', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (302, 0, 'Comas', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (303, 0, 'El Agustino', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (304, 0, 'Independencia', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (305, 0, 'Jesus Maria', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (306, 0, 'La Molina', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (307, 0, 'La Victoria', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (308, 0, 'Cercado', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (309, 0, 'Lince', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (310, 0, 'Los Olivos', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (311, 0, 'Lurigancho', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (312, 0, 'Chosica', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (313, 0, 'Magdalena', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (314, 0, 'Miraflores', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (315, 0, 'Pueblo Libre', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (316, 0, 'Puente Piedra', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (317, 0, 'Rimac', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (318, 0, 'San Borja', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (319, 0, 'San Isidro', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (320, 0, 'San Juan de Lurigancho', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (321, 0, 'San Juan de Miraflores', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (322, 0, 'San Luis', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (323, 0, 'San Martin de Porres', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (324, 0, 'San Miguel', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (325, 0, 'Santa Anita', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (326, 0, 'Surco', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (327, 0, 'Surquillo', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (328, 0, 'Villa El Salvador', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (329, 0, 'Villa Maria del Triunfo', '', '', '', NULL, NULL, 'LIMA', '07 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (334, 0, 'Jaime Delgado', '', '', '', NULL, NULL, 'Congresistas', '12 Jun 2014', 'user4', '', 'Lima', 'Gana Peru', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (335, 0, 'Daniel Abugatás', '', '', '', NULL, NULL, 'Congresistas', '12 Jun 2014', 'user4', '', 'Lima', 'Gana Peru', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (336, 0, 'Ana Solórzano', '', '', '', NULL, NULL, 'Congresistas', '12 Jun 2014', 'user4', '', 'Arequipa', 'Gana Peru', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (337, 0, 'Juan Diaz Dios', '', '', '', NULL, NULL, 'Congresistas', '12 Jun 2014', 'user4', '', 'Lima', 'Fuerza 2011', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (338, 0, 'Octavio Salazar', '', '', '', NULL, NULL, 'Congresistas', '12 Jun 2014', 'user4', '', 'La Libertad', 'Fuerza 2011', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (380, 0, 'Breña', '', '', '', NULL, NULL, 'Municipalidades', '25 Nov 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (381, 0, 'Carabayllo', '', '', '', NULL, NULL, 'Municipalidades', '25 Nov 2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (383, 0, 'Norman Lewis', '', '', '', NULL, NULL, 'Congresistas', '26 Nov 2014', 'ADMIN', '', 'LORETO', 'Peru Posible', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (343, 0, 'Chimbote', '', '', '', NULL, NULL, 'ANCASH', '13 Jun 2014', 'user4', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (344, 0, 'Huaraz', 'bbbbbb', '', '', NULL, NULL, 'ANCASH', '03 Jul 2014', 'uuu', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (382, 0, 'Doris Oseda', '', '', '', NULL, NULL, 'Congresistas', '26 Nov 2014', 'ADMIN', '', 'JUNIN', 'Gana Peru', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (346, 0, 'Gobierno regional', '', '', '', NULL, NULL, 'ANCASH', '11-07-2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (347, 0, 'Municipalidad metropolitana', '', '', '', NULL, NULL, 'LIMA', '11-07-2014', 'ADMIN', '', '', '', '', '', 0, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (348, 0, 'canal 4', 'fdfddfdf', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (349, 0, 'canal 5', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (351, 0, 'programa1', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 348, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (352, 0, 'TV', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (353, 0, 'DIARIOS', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (354, 0, 'RADIOS', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+INSERT INTO `cantantes` VALUES (355, 0, 'MTC (ministerio de trasportes y telecomunicaciones', '', '', '', NULL, NULL, 'MEDIOS', '13 Jul 2014', 'ADMIN', '', '', '', '', '', 1, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `colegiopromedios`
+-- 
+
+CREATE TABLE `colegiopromedios` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `nomalumno` char(50) default NULL,
+  `codalumno` char(50) default NULL,
+  `codigocur` char(50) default NULL,
+  `codigoprof` char(50) default NULL,
+  `password` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `fecha` char(50) default NULL,
+  `nota` int(11) NOT NULL default '0',
+  `bimestre` int(11) NOT NULL default '0',
+  `codaula` varchar(20) NOT NULL,
+  `nomcur` varchar(50) NOT NULL,
+  `nomprof` varchar(30) NOT NULL,
+  `nomaula` varchar(15) NOT NULL,
+  `examen` varchar(40) NOT NULL,
+  `bim1` varchar(2) NOT NULL,
+  `bim2` varchar(2) NOT NULL,
+  `bim3` varchar(2) NOT NULL,
+  `bim4` varchar(2) NOT NULL,
+  `bim1a` varchar(5) NOT NULL,
+  `bim2a` varchar(5) NOT NULL,
+  `bim3a` varchar(5) NOT NULL,
+  `bim4a` varchar(5) NOT NULL,
+  `subcurso` varchar(25) NOT NULL,
+  `promfinal` varchar(10) NOT NULL,
+  `idcurso` int(9) NOT NULL,
+  `tipocur` int(3) NOT NULL,
+  `dis1` tinyint(3) NOT NULL default '0',
+  `dis2` tinyint(3) NOT NULL default '0',
+  `dis3` tinyint(3) NOT NULL default '0',
+  `dis4` tinyint(3) NOT NULL default '0',
+  `EQ1` varchar(2) NOT NULL,
+  `PQ1` varchar(2) NOT NULL,
+  `TFJUS` tinyint(3) NOT NULL default '0',
+  `TFINJ` tinyint(3) NOT NULL default '0',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=460 ;
+
+-- 
+-- Volcar la base de datos para la tabla `colegiopromedios`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `contacto`
+-- 
+
+CREATE TABLE `contacto` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `titulo` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `fecha` char(50) default NULL,
+  `autor` char(50) default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `contacto`
+-- 
+
+INSERT INTO `contacto` VALUES (1, '', 'bbbvbvbvvbvb', NULL, NULL);
+INSERT INTO `contacto` VALUES (3, NULL, 'nyyyyy', '2014-07-21', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cur2`
+-- 
+
+CREATE TABLE `cur2` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL,
+  `categ` char(120) default NULL,
+  `categabrev` varchar(15) NOT NULL,
+  `i1` int(11) NOT NULL default '0',
+  `i2` int(11) NOT NULL default '0',
+  `i3` int(11) NOT NULL default '0',
+  `i4` int(11) NOT NULL default '0',
+  `peso` tinyint(3) NOT NULL,
+  `codcurso` varchar(30) NOT NULL,
+  `nomcurso` varchar(35) NOT NULL,
+  `grado` varchar(10) NOT NULL,
+  `aula` varchar(10) NOT NULL,
+  `bimestre` tinyint(3) NOT NULL,
+  `orden` tinyint(3) NOT NULL,
+  `editado` varchar(7) NOT NULL default '0',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=508 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cur2`
+-- 
+
+INSERT INTO `cur2` VALUES (1, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU1P', 'COMUNICACION', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (2, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU1P', 'COMUNICACION', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (3, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU1P', 'COMUNICACION', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (4, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE1P', 'MATEMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (5, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE1P', 'MATEMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (6, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE1P', 'MATEMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (7, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCIA1P', 'CIENCIA Y AMBIENTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (8, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCIA1P', 'CIENCIA Y AMBIENTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (9, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCIA1P', 'CIENCIA Y AMBIENTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (10, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU5A', 'COMUNICACION', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (11, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU5A', 'COMUNICACION', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (12, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU5A', 'COMUNICACION', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (13, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE5A', 'MATEMATICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (14, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE5A', 'MATEMATICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (15, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE5A', 'MATEMATICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (16, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU4A', 'COMUNICACION', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (17, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU4A', 'COMUNICACION', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (18, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU4A', 'COMUNICACION', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (19, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE4A', 'MATEMATICA', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (20, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE4A', 'MATEMATICA', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (21, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE4A', 'MATEMATICA', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (22, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO4A', 'PERSONAL SOCIAL', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (23, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO4A', 'PERSONAL SOCIAL', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (24, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO4A', 'PERSONAL SOCIAL', '4A', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (25, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO5A', 'PERSONAL SOCIAL', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (26, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO5A', 'PERSONAL SOCIAL', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (27, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO5A', 'PERSONAL SOCIAL', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (28, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO1P', 'PERSONAL SOCIAL', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (29, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO1P', 'PERSONAL SOCIAL', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (30, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO1P', 'PERSONAL SOCIAL', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (31, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING1P', 'INGLES', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (32, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING1P', 'INGLES', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (33, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING1P', 'INGLES', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (34, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'INFO1P', 'INFORMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (35, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO1P', 'INFORMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (36, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO1P', 'INFORMATICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (37, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFI1P', 'EDUCACION FISICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (38, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFI1P', 'EDUCACION FISICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (39, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFI1P', 'EDUCACION FISICA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (40, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL1P', 'EDUCACION RELIGIOSA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (41, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL1P', 'EDUCACION RELIGIOSA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (42, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL1P', 'EDUCACION RELIGIOSA', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (43, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE1P', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (44, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE1P', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (45, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE1P', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (79, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (78, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU2P', 'COMUNICACION', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (73, 0, 'NOTA', '', 0, 0, 0, 0, 2, '35', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (74, 0, 'DIS', '', 0, 0, 0, 0, 2, '35', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (75, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '35', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (76, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU2P', 'COMUNICACION', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (77, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU2P', 'COMUNICACION', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (72, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '34', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (71, 0, 'DIS', '', 0, 0, 0, 0, 2, '34', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (70, 0, 'NOTA', '', 0, 0, 0, 0, 2, '34', 'ARTE', '1.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (80, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (81, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (82, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI2P', 'CIENCIA Y AMBIENTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (83, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI2P', 'CIENCIA Y AMBIENTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (84, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI2P', 'CIENCIA Y AMBIENTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (85, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO2P', 'PERSONAL SOCIAL', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (86, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO2P', 'PERSONAL SOCIAL', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (87, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO2P', 'PERSONAL SOCIAL', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (88, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING2P', 'INGLES', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (89, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING2P', 'INGLES', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (90, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING2P', 'INGLES', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (91, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'INFO2P', 'INFORMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (92, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO2P', 'INFORMATICA', '2.', '', 1, 2, '1');
+INSERT INTO `cur2` VALUES (93, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO2P', 'INFORMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (94, 0, 'NOTA', '', 0, 0, 0, 0, 3, 'EDUFIS2P', 'EDUCACION FISICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (95, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS2P', 'EDUCACION FISICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (96, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS2P', 'EDUCACION FISICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (97, 0, 'NOTA', '', 0, 0, 0, 0, 5, 'EDUREL2P', 'EDUCACION RELIGIOSA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (98, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL2P', 'EDUCACION RELIGIOSA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (99, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL2P', 'EDUCACION RELIGIOSA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (100, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ART2P', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (101, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ART2P', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (102, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ART2P', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (103, 0, 'NOTA', '', 0, 0, 0, 0, 2, '36', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (104, 0, 'DIS', '', 0, 0, 0, 0, 2, '36', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (105, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '36', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (106, 0, 'NOTA', '', 0, 0, 0, 0, 2, '37', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (107, 0, 'DIS', '', 0, 0, 0, 0, 2, '37', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (108, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '37', 'ARTE', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (109, 0, 'NOTA', '', 505, 0, 0, 0, 2, 'COMU3P', 'COMUNICACION', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (505, 0, 'PARCIAL1', '', 0, 0, 0, 0, 1, 'COMU3P', 'COMUNICACION', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (504, 0, 'exam1', '', 0, 0, 0, 0, 0, 'COMU3P', 'COMUNICACION', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (112, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (113, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (114, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (115, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI3P', 'CIENCIA Y AMBIENTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (116, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI3P', 'CIENCIA Y AMBIENTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (117, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI3P', 'CIENCIA Y AMBIENTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (118, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO3P', 'PERSONAL SOCIAL', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (119, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO3P', 'PERSONAL SOCIAL', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (120, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO3P', 'PERSONAL SOCIAL', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (121, 0, 'practica1', '', 0, 0, 0, 0, 5, 'ING3P', 'INGLES', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (122, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING3P', 'INGLES', '3.', '', 1, 3, '0');
+INSERT INTO `cur2` VALUES (123, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING3P', 'INGLES', '3.', '', 1, 4, '0');
+INSERT INTO `cur2` VALUES (124, 0, 'NOTA', '', 124, 0, 0, 0, 2, 'INFO3P', 'INFORMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (125, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO3P', 'INFORMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (126, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO3P', 'INFORMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (127, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS3P', 'EDUCACION FISICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (128, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS3P', 'EDUCACION FISICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (129, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS3P', 'EDUCACION FISICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (130, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL3P', 'EDUCACION RELIGIOSA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (131, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL3P', 'EDUCACION RELIGIOSA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (132, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL3P', 'EDUCACION RELIGIOSA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (133, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE3P', 'ARTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (134, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE3P', 'ARTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (135, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE3P', 'ARTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (136, 0, 'NOTA', '', 0, 0, 0, 0, 2, '38', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (137, 0, 'DIS', '', 0, 0, 0, 0, 2, '38', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (138, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '38', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (139, 0, 'NOTA', '', 0, 0, 0, 0, 2, '39', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (140, 0, 'DIS', '', 0, 0, 0, 0, 2, '39', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (141, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '39', 'ARTE', '3.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (142, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (143, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (144, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU4P', 'COMUNICACION', '4.', '', 1, 5, '0');
+INSERT INTO `cur2` VALUES (145, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE4P', 'MATEMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (146, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE4P', 'MATEMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (147, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE4P', 'MATEMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (148, 0, 'CAPACIDAD DE LA INFORMACION', '', 0, 0, 0, 0, 2, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (149, 0, 'INDAGACION CIENTIFICA', '', 0, 0, 0, 0, 2, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (150, 0, 'JUICIO CRITICO', '', 0, 0, 0, 0, 2, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (151, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO4P', 'PERSONAL SOCIAL', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (152, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO4P', 'PERSONAL SOCIAL', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (153, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO4P', 'PERSONAL SOCIAL', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (154, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING4P', 'INGLES', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (155, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING4P', 'INGLES', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (156, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING4P', 'INGLES', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (157, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'INFO4P', 'INFORMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (158, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO4P', 'INFORMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (159, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO4P', 'INFORMATICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (160, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (161, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (162, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (163, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL4P', 'EDUCACION RELIGIOSA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (164, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL4P', 'EDUCACION RELIGIOSA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (165, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL4P', 'EDUCACION RELIGIOSA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (166, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE4P', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (167, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE4P', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (168, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE4P', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (169, 0, 'NOTA', '', 0, 0, 0, 0, 2, '40', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (170, 0, 'DIS', '', 0, 0, 0, 0, 2, '40', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (171, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '40', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (172, 0, 'EXPRESION ARTISTICA', '', 0, 0, 0, 0, 2, '41', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (173, 0, 'APRECIACION ARTISTICA', '', 0, 0, 0, 0, 2, '41', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (174, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '41', 'ARTE', '4.', '', 1, 3, '0');
+INSERT INTO `cur2` VALUES (175, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU5P', 'COMUNICACION', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (176, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU5P', 'COMUNICACION', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (177, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU5P', 'COMUNICACION', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (178, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE5P', 'MATEMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (179, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE5P', 'MATEMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (180, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE5P', 'MATEMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (345, 0, 'catsss', '', 344, 0, 0, 0, 1, 'CIENCI5P', 'CIENCIA Y AMBIENTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (340, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI5P', 'CIENCIA Y AMBIENTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (339, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI5P', 'CIENCIA Y AMBIENTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (184, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO5P', 'PERSONAL SOCIAL', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (185, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO5P', 'PERSONAL SOCIAL', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (186, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO5P', 'PERSONAL SOCIAL', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (187, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING5P', 'INGLES', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (188, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING5P', 'INGLES', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (189, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING5P', 'INGLES', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (190, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'INFO5P', 'INFORMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (191, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO5P', 'INFORMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (192, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO5P', 'INFORMATICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (193, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDFIS5P', 'EDUCACION FISICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (194, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDFIS5P', 'EDUCACION FISICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (195, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDFIS5P', 'EDUCACION FISICA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (196, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL5P', 'EDUCACION RELIGIOSA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (197, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL5P', 'EDUCACION RELIGIOSA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (198, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL5P', 'EDUCACION RELIGIOSA', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (199, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ART5P', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (200, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ART5P', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (201, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ART5P', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (202, 0, 'EVAL1a', '', 0, 0, 0, 0, 2, '42', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (203, 0, 'DIS', '', 0, 0, 0, 0, 2, '42', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (204, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '42', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (205, 0, 'NOTA', '', 0, 0, 0, 0, 2, '43', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (206, 0, 'DIS', '', 0, 0, 0, 0, 2, '43', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (207, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '43', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (208, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU6P', 'COMUNICACION', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (209, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU6P', 'COMUNICACION', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (210, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU6P', 'COMUNICACION', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (211, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE6P', 'MATEMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (212, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE6P', 'MATEMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (213, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE6P', 'MATEMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (214, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI6P', 'CIANCIA Y AMBIENTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (215, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI6P', 'CIANCIA Y AMBIENTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (216, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI6P', 'CIANCIA Y AMBIENTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (217, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO6P', 'PERSONAL SOCIAL', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (218, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO6P', 'PERSONAL SOCIAL', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (219, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO6P', 'PERSONAL SOCIAL', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (220, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING6P', 'INGLES', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (221, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING6P', 'INGLES', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (222, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING6P', 'INGLES', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (223, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'INFO6P', 'INFORMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (224, 0, 'DIS', '', 0, 0, 0, 0, 2, 'INFO6P', 'INFORMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (225, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'INFO6P', 'INFORMATICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (226, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS6P', 'EDUCACION FISICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (227, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS6P', 'EDUCACION FISICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (228, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS6P', 'EDUCACION FISICA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (229, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL6P', 'EDUCACION RELIGIOSA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (230, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL6P', 'EDUCACION RELIGIOSA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (231, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL6P', 'EDUCACION RELIGIOSA', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (232, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ART6P', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (233, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ART6P', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (234, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ART6P', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (235, 0, 'NOTA', '', 0, 0, 0, 0, 2, '44', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (236, 0, 'DIS', '', 0, 0, 0, 0, 2, '44', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (237, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '44', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (238, 0, 'NOTA', '', 0, 0, 0, 0, 2, '45', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (239, 0, 'DIS', '', 0, 0, 0, 0, 2, '45', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (240, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '45', 'ARTE', '6.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (241, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE1S', 'MATEMATICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (242, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE1S', 'MATEMATICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (243, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE1S', 'MATEMATICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (244, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU1S', 'COMUNICACION', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (245, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU1S', 'COMUNICACION', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (246, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU1S', 'COMUNICACION', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (247, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING1S', 'INGLES', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (248, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING1S', 'INGLES', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (249, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING1S', 'INGLES', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (250, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI1S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (251, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI1S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (252, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI1S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (253, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'HISTO1S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (254, 0, 'DIS', '', 0, 0, 0, 0, 2, 'HISTO1S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (255, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'HISTO1S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (256, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'FORMA1S', 'FORMACION CIUDADANA Y CIVICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (257, 0, 'DIS', '', 0, 0, 0, 0, 2, 'FORMA1S', 'FORMACION CIUDADANA Y CIVICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (258, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'FORMA1S', 'FORMACION CIUDADANA Y CIVICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (259, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO1S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (260, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO1S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (261, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO1S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (262, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS1S', 'EDUCACION FISICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (263, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS1S', 'EDUCACION FISICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (264, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS1S', 'EDUCACION FISICA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (265, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL1S', 'EDUCACION RELIGIOSA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (266, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL1S', 'EDUCACION RELIGIOSA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (267, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL1S', 'EDUCACION RELIGIOSA', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (268, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ART1S', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (269, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ART1S', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (270, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ART1S', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (271, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUTRA1S', 'EDUC PARA EL TRABAJO', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (272, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUTRA1S', 'EDUC PARA EL TRABAJO', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (273, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUTRA1S', 'EDUC PARA EL TRABAJO', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (274, 0, 'NOTA', '', 0, 0, 0, 0, 2, '46', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (275, 0, 'DIS', '', 0, 0, 0, 0, 2, '46', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (276, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '46', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (277, 0, 'NOTA', '', 0, 0, 0, 0, 2, '47', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (278, 0, 'DIS', '', 0, 0, 0, 0, 2, '47', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (279, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '47', 'ARTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (280, 0, 'NOTA', '', 0, 0, 0, 0, 2, '48', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (281, 0, 'DIS', '', 0, 0, 0, 0, 2, '48', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (282, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '48', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (283, 0, 'NOTA', '', 0, 0, 0, 0, 2, '49', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (284, 0, 'DIS', '', 0, 0, 0, 0, 2, '49', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (285, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '49', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'I.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (286, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CINCI5A', 'CIENCIA Y AMBIENTE', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (287, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CINCI5A', 'CIENCIA Y AMBIENTE', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (288, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CINCI5A', 'CIENCIA Y AMBIENTE', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (289, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS5A', 'EDUCACION FISICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (290, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS5A', 'EDUCACION FISICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (291, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS5A', 'EDUCACION FISICA', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (292, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ART5A', 'ARTE Y MANUALIDADES', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (293, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ART5A', 'ARTE Y MANUALIDADES', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (294, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ART5A', 'ARTE Y MANUALIDADES', '5A', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (295, 0, 'CATEG3', '', 0, 0, 0, 0, 3, 'PERSO2P', 'PERSONAL SOCIAL', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (296, 0, 'CATEG4 de matematicas', '', 0, 0, 0, 0, 5, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (297, 0, 'sub1 eval2', '', 80, 0, 0, 0, 1, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (298, 0, 'sub2 de eval2', '', 80, 0, 0, 0, 3, 'MATE2P', 'MATEMATICA', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (299, 0, 'eval2a', '', 89, 0, 0, 0, 3, 'ING2P', 'INGLES', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (300, 0, 'eval2b', '', 89, 0, 0, 0, 1, 'ING2P', 'INGLES', '2.', '', 1, 1, '1');
+INSERT INTO `cur2` VALUES (301, 0, 'eval2a', '', 119, 0, 0, 0, 3, 'PERSO3P', 'PERSONAL SOCIAL', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (302, 0, 'eval2b', '', 119, 0, 0, 0, 1, 'PERSO3P', 'PERSONAL SOCIAL', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (303, 0, 'eval2a', '', 113, 0, 0, 0, 3, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (304, 0, 'eval2b', '', 113, 0, 0, 0, 1, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (305, 0, 'eval1a', '', 112, 0, 0, 0, 4, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (306, 0, 'eval1b', '', 112, 0, 0, 0, 1, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (307, 0, 'eval2a1', '', 113, 303, 0, 0, 5, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (308, 0, 'eval2a2', '', 113, 303, 0, 0, 1, 'MATE3P', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (309, 0, 'practica2', '', 0, 0, 0, 0, 1, 'ING3P', 'INGLES', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (310, 0, 'subpractica', '', 121, 0, 0, 0, 1, 'ING3P', 'INGLES', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (311, 0, 'subpractica2', '', 121, 0, 0, 0, 5, 'ING3P', 'INGLES', '3.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (312, 0, 'prac3', '', 121, 311, 0, 0, 1, 'ING3P', 'INGLES', '3.', '', 1, 3, '0');
+INSERT INTO `cur2` VALUES (313, 0, 'prac2', '', 121, 311, 0, 0, 4, 'ING3P', 'INGLES', '3.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (314, 0, 'TECNICA Y CREATIVIDAD CORPORAL', '', 173, 0, 0, 0, 1, '41', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (315, 0, 'PUESTA EN ESCENA', '', 173, 0, 0, 0, 1, '41', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (316, 0, 'CULTURA TEATRAL', '', 172, 0, 0, 0, 1, '41', 'ARTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (317, 0, 'EXAMEN BIMESTRAL', '', 0, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 4, '0');
+INSERT INTO `cur2` VALUES (318, 0, 'Describe y explica cada uno de las biomoleculas e', '', 148, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (319, 0, 'Enumera las principales caracteristicas de la mem', '', 148, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (320, 0, 'Diferencia celula procariota y eucariota. Explica', '', 148, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 3, '0');
+INSERT INTO `cur2` VALUES (321, 0, 'Presentacion de sus informes', '', 149, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (322, 0, 'En las actividades de laboratorio utiliza adecuada', '', 149, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (323, 0, 'Juzga las acciones del en perjuicio de la utilizac', '', 150, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (324, 0, 'Argumenta la repercusiones que podria tener en un', '', 150, 0, 0, 0, 1, 'CIENCI4P', 'CIENCIA Y AMBIENTE', '4.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (325, 0, 'EVAL3', '', 0, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (326, 0, 'EVAL4', '', 0, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (327, 0, 'EVAL0', '', 0, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (328, 0, 'PRIMER', '', 0, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (329, 0, 'prueba1', '', 142, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (330, 0, 'examen1', '', 143, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (331, 0, 'NOTA', '', 142, 329, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 2, '0');
+INSERT INTO `cur2` VALUES (332, 0, 'abc', '', 142, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 3, '0');
+INSERT INTO `cur2` VALUES (333, 0, 'prueba0', '', 143, 0, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (334, 0, 'prueba00', '', 142, 329, 0, 0, 1, 'COMU4P', 'COMUNICACION', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (335, 0, 'CATEG1', '', 0, 0, 0, 0, 1, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (338, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI5P', 'CIENCIA Y AMBIENTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (344, 0, 'cat3', '', 0, 0, 0, 0, 1, 'CIENCI5P', 'CIENCIA Y AMBIENTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (346, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE2S', 'MATEMATICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (347, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE2S', 'MATEMATICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (348, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE2S', 'MATEMATICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (349, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU2S', 'COMUNICACION', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (350, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU2S', 'COMUNICACION', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (351, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU2S', 'COMUNICACION', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (352, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING2S', 'INGLES', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (353, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING2S', 'INGLES', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (354, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING2S', 'INGLES', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (355, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCI2S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (356, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCI2S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (357, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCI2S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (358, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'HISTO2S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (359, 0, 'DIS', '', 0, 0, 0, 0, 2, 'HISTO2S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (360, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'HISTO2S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (361, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'FORMA2S', 'FORMACION CIUDADANA Y CIVICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (362, 0, 'DIS', '', 0, 0, 0, 0, 2, 'FORMA2S', 'FORMACION CIUDADANA Y CIVICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (363, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'FORMA2S', 'FORMACION CIUDADANA Y CIVICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (364, 0, 'NOTA', '', 0, 0, 0, 0, 2, '50', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (365, 0, 'DIS', '', 0, 0, 0, 0, 2, '50', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (366, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '50', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (367, 0, 'NOTA', '', 0, 0, 0, 0, 2, '51', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (368, 0, 'DIS', '', 0, 0, 0, 0, 2, '51', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (369, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '51', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (370, 0, 'NOTA', '', 0, 0, 0, 0, 2, '52', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (371, 0, 'DIS', '', 0, 0, 0, 0, 2, '52', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (372, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '52', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (373, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO2S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (374, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO2S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (375, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO2S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (376, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS2S', 'EDUCACION FISICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (377, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS2S', 'EDUCACION FISICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (378, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS2S', 'EDUCACION FISICA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (379, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL2S', 'EDUCACION RELIGIOSA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (380, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL2S', 'EDUCACION RELIGIOSA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (381, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL2S', 'EDUCACION RELIGIOSA', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (382, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE2S', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (383, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE2S', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (384, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE2S', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (385, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUCTRAB2S', 'EDUC PARA EL TRABAJO', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (386, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUCTRAB2S', 'EDUC PARA EL TRABAJO', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (387, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUCTRAB2S', 'EDUC PARA EL TRABAJO', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (388, 0, 'NOTA', '', 0, 0, 0, 0, 2, '53', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (389, 0, 'DIS', '', 0, 0, 0, 0, 2, '53', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (390, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '53', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (391, 0, 'NOTA', '', 0, 0, 0, 0, 2, '54', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (392, 0, 'DIS', '', 0, 0, 0, 0, 2, '54', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (393, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '54', 'ARTE', 'II.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (394, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (395, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (396, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (397, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU3S', 'COMUNICACION', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (398, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU3S', 'COMUNICACION', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (399, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU3S', 'COMUNICACION', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (400, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (401, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (402, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (403, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING3S', 'INGLES', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (404, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING3S', 'INGLES', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (405, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING3S', 'INGLES', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (406, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCIA3S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (407, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCIA3S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (408, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCIA3S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (409, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'HISTO3S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (410, 0, 'DIS', '', 0, 0, 0, 0, 2, 'HISTO3S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (411, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'HISTO3S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (412, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'FORMA3S', 'FORMACION CIUDADANA Y CIVICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (413, 0, 'DIS', '', 0, 0, 0, 0, 2, 'FORMA3S', 'FORMACION CIUDADANA Y CIVICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (414, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'FORMA3S', 'FORMACION CIUDADANA Y CIVICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (415, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO3S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (416, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO3S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (417, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO3S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (418, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS3S', 'EDUCACION FISICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (419, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS3S', 'EDUCACION FISICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (420, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS3S', 'EDUCACION FISICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (421, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL3S', 'EDUCACION RELIGIOSA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (422, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL3S', 'EDUCACION RELIGIOSA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (423, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL3S', 'EDUCACION RELIGIOSA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (424, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE3S', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (425, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE3S', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (426, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE3S', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (427, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUC3S', 'EDUC. PARA EL TRABAJO', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (428, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUC3S', 'EDUC. PARA EL TRABAJO', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (429, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUC3S', 'EDUC. PARA EL TRABAJO', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (430, 0, 'NOTA', '', 0, 0, 0, 0, 2, '55', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (431, 0, 'DIS', '', 0, 0, 0, 0, 2, '55', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (432, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '55', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (433, 0, 'NOTA', '', 0, 0, 0, 0, 2, '56', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (434, 0, 'DIS', '', 0, 0, 0, 0, 2, '56', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (435, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '56', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (436, 0, 'NOTA', '', 0, 0, 0, 0, 2, '57', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (437, 0, 'DIS', '', 0, 0, 0, 0, 2, '57', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (438, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '57', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (439, 0, 'NOTA', '', 0, 0, 0, 0, 2, '58', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (440, 0, 'DIS', '', 0, 0, 0, 0, 2, '58', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (441, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '58', 'ARTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (442, 0, 'NOTA', '', 0, 0, 0, 0, 2, '59', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (443, 0, 'DIS', '', 0, 0, 0, 0, 2, '59', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (444, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '59', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (445, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (446, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (447, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE3S', 'MATEMATICA', 'III.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (448, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'MATE4S', 'MATEMATICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (449, 0, 'DIS', '', 0, 0, 0, 0, 2, 'MATE4S', 'MATEMATICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (450, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'MATE4S', 'MATEMATICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (451, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'COMU4S', 'COMUNICACION', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (452, 0, 'DIS', '', 0, 0, 0, 0, 2, 'COMU4S', 'COMUNICACION', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (453, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'COMU4S', 'COMUNICACION', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (454, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ING4S', 'INGLES', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (455, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ING4S', 'INGLES', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (456, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ING4S', 'INGLES', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (457, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'CIENCIA4S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (458, 0, 'DIS', '', 0, 0, 0, 0, 2, 'CIENCIA4S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (459, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'CIENCIA4S', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (460, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'HISTO4S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (461, 0, 'DIS', '', 0, 0, 0, 0, 2, 'HISTO4S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (462, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'HISTO4S', 'HISTORIA, GEOGRAFIA Y ECONOMIA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (463, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'FORMA4S', 'FORMACION CIUDADANA Y CIVICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (464, 0, 'DIS', '', 0, 0, 0, 0, 2, 'FORMA4S', 'FORMACION CIUDADANA Y CIVICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (465, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'FORMA4S', 'FORMACION CIUDADANA Y CIVICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (466, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'PERSO4S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (467, 0, 'DIS', '', 0, 0, 0, 0, 2, 'PERSO4S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (468, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'PERSO4S', 'PERSONA, FAMILIA Y RELACIONES HUMAN', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (469, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUFIS4S', 'EDUCACION FISICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (470, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUFIS4S', 'EDUCACION FISICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (471, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUFIS4S', 'EDUCACION FISICA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (472, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUREL4S', 'EDUCACION RELIGIOSA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (473, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUREL4S', 'EDUCACION RELIGIOSA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (474, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUREL4S', 'EDUCACION RELIGIOSA', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (475, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'ARTE4S', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (476, 0, 'DIS', '', 0, 0, 0, 0, 2, 'ARTE4S', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (477, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'ARTE4S', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (478, 0, 'NOTA', '', 0, 0, 0, 0, 2, 'EDUC4S', 'EDUC. PARA EL TRABAJO', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (479, 0, 'DIS', '', 0, 0, 0, 0, 2, 'EDUC4S', 'EDUC. PARA EL TRABAJO', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (480, 0, 'F.INJ', '', 0, 0, 0, 0, 2, 'EDUC4S', 'EDUC. PARA EL TRABAJO', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (481, 0, 'NOTA', '', 0, 0, 0, 0, 2, '60', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (482, 0, 'DIS', '', 0, 0, 0, 0, 2, '60', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (483, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '60', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (484, 0, 'NOTA', '', 0, 0, 0, 0, 2, '61', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (485, 0, 'DIS', '', 0, 0, 0, 0, 2, '61', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (486, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '61', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (487, 0, 'NOTA', '', 0, 0, 0, 0, 2, '62', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (488, 0, 'DIS', '', 0, 0, 0, 0, 2, '62', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (489, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '62', 'CIENCIA, TECNOLOGIA Y AMBIENTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (490, 0, 'NOTA', '', 0, 0, 0, 0, 2, '63', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (491, 0, 'DIS', '', 0, 0, 0, 0, 2, '63', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (492, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '63', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (493, 0, 'NOTA', '', 0, 0, 0, 0, 2, '64', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (494, 0, 'DIS', '', 0, 0, 0, 0, 2, '64', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (495, 0, 'F.INJ', '', 0, 0, 0, 0, 2, '64', 'ARTE', 'IV.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (496, 0, 'eval3', '', 0, 0, 0, 0, 1, '42', 'ARTE', '5.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (498, 0, 'F.JUST', '', 0, 0, 0, 0, 1, 'ARTE3P', 'ARTE', '3.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (499, 0, 'CATT1', '', 0, 0, 0, 0, 1, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (500, 0, 'CATT2', '', 0, 0, 0, 0, 3, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (501, 0, 'CATT2a', '', 500, 0, 0, 0, 3, 'EDUFIS4P', 'EDUCACION FISICA', '4.', '', 1, 1, '0');
+INSERT INTO `cur2` VALUES (507, 0, 'nnnnnn', '', 505, 0, 0, 0, 1, 'COMU3P', 'COMUNICACION', '3.', '', 1, 1, '0');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cur2_prof`
+-- 
+
+CREATE TABLE `cur2_prof` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL,
+  `categ` char(120) default NULL,
+  `categabrev` varchar(15) NOT NULL,
+  `i1` int(11) NOT NULL default '0',
+  `i2` int(11) NOT NULL default '0',
+  `i3` int(11) NOT NULL default '0',
+  `i4` int(11) NOT NULL default '0',
+  `peso` tinyint(3) NOT NULL,
+  `codcurso` varchar(30) NOT NULL,
+  `nomcurso` varchar(35) NOT NULL,
+  `grado` varchar(10) NOT NULL,
+  `aula` varchar(10) NOT NULL,
+  `bimestre` tinyint(3) NOT NULL,
+  `orden` tinyint(3) NOT NULL,
+  `editado` varchar(5) NOT NULL default '0',
+  `prof` varchar(20) NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cur2_prof`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cursoaula`
+-- 
+
+CREATE TABLE `cursoaula` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `nomcurso` char(50) default NULL,
+  `codcurso` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `grado` char(50) default NULL,
+  `nomprofesor` char(50) default NULL,
+  `codprofesor` varchar(20) NOT NULL,
+  `codaula` varchar(15) NOT NULL,
+  `nomaula` varchar(15) NOT NULL,
+  `subcurso` varchar(100) NOT NULL,
+  `notas` tinyint(3) NOT NULL default '0',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cursoaula`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `cursos`
+-- 
+
+CREATE TABLE `cursos` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idcurso` int(11) NOT NULL,
+  `idsubcurso` int(11) NOT NULL,
+  `curso` char(50) default NULL,
+  `subcurso` varchar(100) NOT NULL,
+  `subsubcurso` varchar(100) NOT NULL,
+  `codigo` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `grado` char(50) default NULL,
+  `profesor` char(50) default NULL,
+  `tipo` int(11) NOT NULL default '0',
+  `colegio` int(11) NOT NULL,
+  `especial` int(3) NOT NULL,
+  `ordengrado` int(4) NOT NULL,
+  `evalflag` varchar(5) NOT NULL default 'SI',
+  `orden` tinyint(2) NOT NULL default '0',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `cursos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `distritos`
+-- 
+
+CREATE TABLE `distritos` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id1` int(11) NOT NULL default '0',
+  `id2` int(11) NOT NULL default '0',
+  `id3` int(11) NOT NULL default '0',
+  `nombre` char(50) default NULL,
+  `visible` int(11) NOT NULL default '0',
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+
+-- 
+-- Volcar la base de datos para la tabla `distritos`
+-- 
+
+INSERT INTO `distritos` VALUES (1, 1, 1, 0, 'Ancon', 0);
+INSERT INTO `distritos` VALUES (2, 2, 1, 0, 'Ate', 0);
+INSERT INTO `distritos` VALUES (3, 3, 1, 0, 'Barranco', 0);
+INSERT INTO `distritos` VALUES (4, 4, 0, 0, 'Bre&ntilde;a', 0);
+INSERT INTO `distritos` VALUES (5, 5, 0, 0, 'Carabayllo', 0);
+INSERT INTO `distritos` VALUES (6, 6, 0, 0, 'Chaclacayo', 0);
+INSERT INTO `distritos` VALUES (7, 7, 0, 0, 'Chorrillos', 0);
+INSERT INTO `distritos` VALUES (8, 8, 0, 0, 'Comas', 0);
+INSERT INTO `distritos` VALUES (9, 9, 0, 0, 'El Agustino', 0);
+INSERT INTO `distritos` VALUES (10, 10, 1, 0, 'Independencia', 0);
+INSERT INTO `distritos` VALUES (11, 11, 1, 0, 'Jesus Maria', 0);
+INSERT INTO `distritos` VALUES (12, 12, 0, 0, 'La Molina', 0);
+INSERT INTO `distritos` VALUES (13, 16, 1, 0, 'La Victoria', 0);
+INSERT INTO `distritos` VALUES (14, 17, 1, 0, 'Cercado', 0);
+INSERT INTO `distritos` VALUES (15, 18, 0, 0, 'Lince', 0);
+INSERT INTO `distritos` VALUES (16, 19, 1, 0, 'Los Olivos', 0);
+INSERT INTO `distritos` VALUES (17, 20, 0, 0, 'Lurigancho', 0);
+INSERT INTO `distritos` VALUES (18, 21, 1, 0, 'Chosica', 0);
+INSERT INTO `distritos` VALUES (19, 22, 0, 0, 'Magdalena', 0);
+INSERT INTO `distritos` VALUES (20, 23, 1, 0, 'Miraflores', 0);
+INSERT INTO `distritos` VALUES (21, 24, 0, 0, 'Pueblo Libre', 0);
+INSERT INTO `distritos` VALUES (22, 25, 1, 0, 'Puente Piedra', 0);
+INSERT INTO `distritos` VALUES (23, 0, 0, 0, NULL, 0);
+INSERT INTO `distritos` VALUES (24, 26, 0, 0, 'Rimac', 0);
+INSERT INTO `distritos` VALUES (25, 27, 1, 0, 'San Borja', 0);
+INSERT INTO `distritos` VALUES (26, 28, 1, 0, 'San Isidro', 0);
+INSERT INTO `distritos` VALUES (27, 29, 1, 0, 'San Juan de Lurigancho', 0);
+INSERT INTO `distritos` VALUES (28, 30, 0, 0, 'San Juan de Miraflores', 0);
+INSERT INTO `distritos` VALUES (29, 31, 0, 0, 'San Luis', 0);
+INSERT INTO `distritos` VALUES (30, 32, 0, 0, 'San Martin de Porres', 0);
+INSERT INTO `distritos` VALUES (31, 33, 0, 0, 'San Miguel', 0);
+INSERT INTO `distritos` VALUES (32, 34, 0, 0, 'Santa Anita', 0);
+INSERT INTO `distritos` VALUES (33, 35, 0, 0, 'Surco', 0);
+INSERT INTO `distritos` VALUES (34, 36, 0, 0, 'Surquillo', 0);
+INSERT INTO `distritos` VALUES (35, 37, 1, 0, 'Villa El Salvador', 0);
+INSERT INTO `distritos` VALUES (36, 38, 0, 0, 'Villa Maria del Triunfo', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `estilos`
+-- 
+
+CREATE TABLE `estilos` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idestilo` varchar(20) NOT NULL default '0',
+  `nombre` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `orden` tinyint(3) NOT NULL,
+  `tipo` varchar(20) NOT NULL,
+  `subtipo` tinyint(3) NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
+
+-- 
+-- Volcar la base de datos para la tabla `estilos`
+-- 
+
+INSERT INTO `estilos` VALUES (3, 'al', 'ANCASH', '', 0, '2', 0);
+INSERT INTO `estilos` VALUES (23, 'min', 'Ministerios', '', 2, '', 31);
+INSERT INTO `estilos` VALUES (24, 'LL', 'LA LIBERTAD', '', 0, '2', 0);
+INSERT INTO `estilos` VALUES (21, 'cand', 'LIMA', '', 1, '2', 0);
+INSERT INTO `estilos` VALUES (25, 'AR', 'AREQUIPA', '', 0, '2', 0);
+INSERT INTO `estilos` VALUES (19, 'cong', 'Congresistas', '', 2, '', 32);
+INSERT INTO `estilos` VALUES (20, 'mun', 'Municipalidades', '', 2, '', 31);
+INSERT INTO `estilos` VALUES (26, 'ME', 'MEDIOS', '', 3, '3', 0);
+INSERT INTO `estilos` VALUES (27, 'JU', 'JUGUETES', '', 0, '3', 0);
+INSERT INTO `estilos` VALUES (30, '0', 'dssdsd', '', 0, '4', 0);
+INSERT INTO `estilos` VALUES (31, '0', 'PODER EJECUTIVO', '', 3, '1', 0);
+INSERT INTO `estilos` VALUES (32, '0', 'PODER LEGISLATIVO', '', 2, '1', 0);
+INSERT INTO `estilos` VALUES (33, '0', 'PODER JUDICIAL', '', 0, '1', 0);
+INSERT INTO `estilos` VALUES (34, '0', 'EDUCACION', '', 0, '3', 0);
+INSERT INTO `estilos` VALUES (35, '0', 'Jueces', '', 0, '', 33);
+INSERT INTO `estilos` VALUES (36, '0', 'OCMA', '', 0, '', 33);
+INSERT INTO `estilos` VALUES (37, '0', 'BANCOS / FINANCIERAS', '', 0, '3', 0);
+INSERT INTO `estilos` VALUES (38, '0', 'Traficantes de terrenos', '', 0, '3', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `examenes_predef`
+-- 
+
+CREATE TABLE `examenes_predef` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `codexamen` int(7) NOT NULL,
+  `codcurso` char(20) default NULL,
+  `nomcurso` char(20) default NULL,
+  `subcurso` varchar(60) NOT NULL,
+  `subsubcurso` varchar(60) NOT NULL,
+  `examen` char(50) default NULL,
+  `tipo` int(4) NOT NULL default '0',
+  `peso` varchar(4) NOT NULL default '2',
+  `fecha` char(50) default NULL,
+  `hora` char(50) default NULL,
+  `autor` char(50) default NULL,
+  `editado` int(11) NOT NULL,
+  `orden` int(4) NOT NULL default '20',
+  `grado` int(3) NOT NULL,
+  `bimestre` int(3) NOT NULL,
+  `area` varchar(50) NOT NULL default 'AREA1',
+  `area2` varchar(80) NOT NULL default 'AREA2',
+  `rango` int(3) NOT NULL,
+  `idcateg` int(7) NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `examenes_predef`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `mensajes`
+-- 
+
+CREATE TABLE `mensajes` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idprod` int(11) NOT NULL default '0',
+  `idautordes` int(11) NOT NULL default '0',
+  `nomautordes` char(50) collate utf8_unicode_ci default NULL,
+  `idautorori` int(11) NOT NULL default '0',
+  `nomautorori` char(50) collate utf8_unicode_ci default NULL,
+  `preg` text collate utf8_unicode_ci NOT NULL,
+  `estado` char(50) collate utf8_unicode_ci default NULL,
+  `tipo` char(50) collate utf8_unicode_ci default NULL,
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+-- 
+-- Volcar la base de datos para la tabla `mensajes`
+-- 
+
+INSERT INTO `mensajes` VALUES (1, 24, 0, '', 0, 'ADMIN', 'Escribe tu opinion aquiuuuuuuu', '', NULL, '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `mercado`
+-- 
+
+CREATE TABLE `mercado` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id1` int(11) NOT NULL default '0',
+  `idcat` int(11) NOT NULL default '0',
+  `nombre` char(50) default NULL,
+  `resumen` char(50) default NULL,
+  `descripcion` text NOT NULL,
+  `precio` char(50) default NULL,
+  `categ` char(50) default NULL,
+  `fecha` char(50) default NULL,
+  `foto` char(50) default NULL,
+  `autor` char(50) default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+-- 
+-- Volcar la base de datos para la tabla `mercado`
+-- 
+
+INSERT INTO `mercado` VALUES (3, 1, 0, 'CDs', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (4, 2, 0, 'DVDs / Blu-ray', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (5, 3, 0, 'Discos de Vinilo', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (6, 4, 4, 'Libros / Revistas / Posters', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (7, 5, 5, 'Ropa', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (8, 6, 0, 'Joyas / Adornos / Juguetes', NULL, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `mercado` VALUES (9, 7, 0, 'Otros', NULL, '', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `operaciones`
+-- 
+
+CREATE TABLE `operaciones` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idor` int(11) NOT NULL default '0',
+  `iddes` int(11) NOT NULL default '0',
+  `loginor` char(50) default NULL,
+  `logindes` char(50) default NULL,
+  `producto` varchar(80) NOT NULL,
+  `idprod` int(11) NOT NULL,
+  `tipo` char(50) default NULL,
+  `precio` char(50) default NULL,
+  `cant` char(50) default NULL,
+  `fecha` char(50) default NULL,
+  `fechan` varchar(15) NOT NULL,
+  `album` char(50) default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+-- 
+-- Volcar la base de datos para la tabla `operaciones`
+-- 
+
+INSERT INTO `operaciones` VALUES (12, 3, 3, 'user4', 'user4', 'titulo queja', 17, '', NULL, NULL, '16 May 2014', '', NULL);
+INSERT INTO `operaciones` VALUES (13, 3, 3, 'user4', 'user4', 'titulo queja', 17, '', NULL, NULL, '16 May 2014', '', NULL);
+INSERT INTO `operaciones` VALUES (14, 4, 3, 'carlos21', 'user4', 'para el gobierno regional de Ancash', 2, '', NULL, NULL, '25 Nov 2014', '', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `preguntas`
+-- 
+
+CREATE TABLE `preguntas` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idprod` int(11) NOT NULL default '0',
+  `idautordes` int(11) NOT NULL default '0',
+  `nomautordes` char(50) collate utf8_unicode_ci default NULL,
+  `idautorori` int(11) NOT NULL default '0',
+  `nomautorori` char(50) collate utf8_unicode_ci default NULL,
+  `preg` text collate utf8_unicode_ci NOT NULL,
+  `estado` char(50) collate utf8_unicode_ci default NULL,
+  `tipo` char(50) collate utf8_unicode_ci default NULL,
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+-- 
+-- Volcar la base de datos para la tabla `preguntas`
+-- 
+
+INSERT INTO `preguntas` VALUES (1, 1, 0, '', 4, 'carlos21', 'esta queja es justa', '', NULL, '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `puntos`
+-- 
+
+CREATE TABLE `puntos` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idor` int(11) NOT NULL default '0',
+  `iddes` int(11) NOT NULL default '0',
+  `puntos` int(11) NOT NULL default '0',
+  `loginor` char(50) default NULL,
+  `logindes` char(50) default NULL,
+  `tipo` char(50) default NULL,
+  `fecha` char(50) default NULL,
+  `fechan` varchar(15) NOT NULL,
+  `album` char(50) default NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+-- 
+-- Volcar la base de datos para la tabla `puntos`
+-- 
+
+INSERT INTO `puntos` VALUES (7, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+INSERT INTO `puntos` VALUES (8, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+INSERT INTO `puntos` VALUES (9, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+INSERT INTO `puntos` VALUES (10, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+INSERT INTO `puntos` VALUES (11, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+INSERT INTO `puntos` VALUES (12, 3, 0, 0, 'user4', '', '', NULL, '', NULL);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tienda`
+-- 
+
+CREATE TABLE `tienda` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idcant` int(11) NOT NULL default '0',
+  `autor` char(50) collate utf8_unicode_ci default NULL,
+  `idautor` int(11) NOT NULL,
+  `nombre` char(50) collate utf8_unicode_ci default NULL,
+  `stock` tinyint(6) NOT NULL,
+  `descripcion` text collate utf8_unicode_ci NOT NULL,
+  `tipo` char(50) collate utf8_unicode_ci default NULL,
+  `precio` char(50) collate utf8_unicode_ci default NULL,
+  `moneda` varchar(10) collate utf8_unicode_ci NOT NULL,
+  `precio1` decimal(8,2) NOT NULL,
+  `precio2` decimal(8,2) NOT NULL,
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  `fechan` varchar(15) collate utf8_unicode_ci NOT NULL,
+  `foto` char(50) collate utf8_unicode_ci default NULL,
+  `album` char(50) collate utf8_unicode_ci default NULL,
+  `decada` char(50) collate utf8_unicode_ci default NULL,
+  `estilo` char(50) collate utf8_unicode_ci default NULL,
+  `estado` tinyint(3) NOT NULL,
+  `pais` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `obs` text collate utf8_unicode_ci NOT NULL,
+  `duracion` tinyint(3) NOT NULL,
+  `idcat` tinyint(3) NOT NULL,
+  `estadoprod` varchar(50) collate utf8_unicode_ci NOT NULL,
+  `apoyos` varchar(10) collate utf8_unicode_ci NOT NULL,
+  `respuesta` text collate utf8_unicode_ci NOT NULL,
+  `resplink` text collate utf8_unicode_ci NOT NULL,
+  `lugarref` varchar(200) collate utf8_unicode_ci NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `tienda`
+-- 
+
+INSERT INTO `tienda` VALUES (1, 275, 'user4', 3, 'Reclamo al ministro de educacion', 0, 'esto es un ejemplo de reclamo, aqui va la descripcion', '', '25.00', '', 0.00, 0.00, '25 Nov 2014', '', '', NULL, NULL, NULL, 0, '', '', 0, 0, '', '2', '', '', '');
+INSERT INTO `tienda` VALUES (2, 346, 'user4', 3, 'para el gobierno regional de Ancash', -1, 'este es un reclamo de ejemplo para el gobierno regional', '', '25.00', '', 0.00, 0.00, '25 Nov 2014', '', '', NULL, NULL, NULL, 0, '', '', 0, 0, '', '1', '', '', '');
+INSERT INTO `tienda` VALUES (3, 379, 'ADMIN', 0, 'queja en Barranco', 0, 'ejemplo de queja contra la municipalidad de barranco', '', '25.00', '', 0.00, 0.00, '25 Nov 2014', '', '', NULL, NULL, NULL, 0, '', '', 0, 0, '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `tiendacong`
+-- 
+
+CREATE TABLE `tiendacong` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `idcant` int(11) NOT NULL default '0',
+  `autor` char(50) collate utf8_unicode_ci default NULL,
+  `idautor` int(11) NOT NULL,
+  `nombre` char(50) collate utf8_unicode_ci default NULL,
+  `stock` tinyint(6) NOT NULL,
+  `descripcion` text collate utf8_unicode_ci NOT NULL,
+  `tipo` char(50) collate utf8_unicode_ci default NULL,
+  `precio` char(50) collate utf8_unicode_ci default NULL,
+  `moneda` varchar(10) collate utf8_unicode_ci NOT NULL,
+  `precio1` decimal(8,2) NOT NULL,
+  `precio2` decimal(8,2) NOT NULL,
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  `fechan` varchar(15) collate utf8_unicode_ci NOT NULL,
+  `foto` char(50) collate utf8_unicode_ci default NULL,
+  `album` char(50) collate utf8_unicode_ci default NULL,
+  `decada` char(50) collate utf8_unicode_ci default NULL,
+  `estilo` char(50) collate utf8_unicode_ci default NULL,
+  `estado` tinyint(3) NOT NULL,
+  `pais` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `obs` text collate utf8_unicode_ci NOT NULL,
+  `duracion` tinyint(3) NOT NULL,
+  `idcat` tinyint(3) NOT NULL,
+  `estadoprod` varchar(50) collate utf8_unicode_ci NOT NULL,
+  `apoyos` varchar(10) collate utf8_unicode_ci NOT NULL,
+  `respuesta` text collate utf8_unicode_ci NOT NULL,
+  `resplink` text collate utf8_unicode_ci NOT NULL,
+  `lugarref` varchar(200) collate utf8_unicode_ci NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+-- 
+-- Volcar la base de datos para la tabla `tiendacong`
+-- 
+
+INSERT INTO `tiendacong` VALUES (2, 336, 'user4', 3, 'Estuvo en el Congreso', 0, '', '', '25.00', '', 0.00, 0.00, '10-11-2014', '20141110', '', 'Ana Solórzano', NULL, NULL, 0, '', '', 0, 0, '', '', '', '', '');
+INSERT INTO `tiendacong` VALUES (3, 334, 'user4', 3, 'Estuvo en el Congreso', 0, '', '', '25.00', '', 0.00, 0.00, '06-11-2014', '20141106', '', 'Jaime Delgado', NULL, NULL, 0, '', '', 0, 0, '', '', '', '', '');
+INSERT INTO `tiendacong` VALUES (5, 382, 'ADMIN', 0, 'Estuvo en el Congreso  - presento proyecto de ley', 0, 'el proyecto consiste en ....', '', '25.00', '', 0.00, 0.00, '17-11-2014', '20141117', '', 'Doris Oseda', NULL, NULL, 0, '', '', 0, 0, '', '', '', '', '');
+INSERT INTO `tiendacong` VALUES (6, 383, 'ADMIN', 0, 'Estuvo en el Congreso', 0, '', '', '25.00', '', 0.00, 0.00, '21-11-2014', '20141121', '', 'Norman Lewis', NULL, NULL, 0, '', '', 0, 0, '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios`
+-- 
+
+CREATE TABLE `usuarios` (
+  `camp0` int(11) NOT NULL auto_increment,
+  `id1` int(11) NOT NULL default '1',
+  `nombre` char(50) collate utf8_unicode_ci default NULL,
+  `email` char(50) collate utf8_unicode_ci default NULL,
+  `login` char(50) collate utf8_unicode_ci default NULL,
+  `pass` char(50) collate utf8_unicode_ci default NULL,
+  `nombrereal` varchar(50) collate utf8_unicode_ci NOT NULL,
+  `descripcion` text collate utf8_unicode_ci NOT NULL,
+  `direccion` char(50) collate utf8_unicode_ci default NULL,
+  `pais` char(50) collate utf8_unicode_ci default NULL,
+  `prov` char(50) collate utf8_unicode_ci default NULL,
+  `distrito` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `telefono` char(50) collate utf8_unicode_ci default NULL,
+  `puntos` int(11) NOT NULL default '0',
+  `tventas` int(11) NOT NULL default '0',
+  `tcompras` int(11) NOT NULL default '0',
+  `fecha` char(50) collate utf8_unicode_ci default NULL,
+  `edad` char(50) collate utf8_unicode_ci default NULL,
+  `ultfecha` char(50) collate utf8_unicode_ci default NULL,
+  `dni` varchar(15) collate utf8_unicode_ci NOT NULL,
+  `face` varchar(100) collate utf8_unicode_ci NOT NULL,
+  `verificado` tinyint(3) NOT NULL,
+  `repre` varchar(50) collate utf8_unicode_ci NOT NULL,
+  `retorno` varchar(120) collate utf8_unicode_ci NOT NULL,
+  `advertencias` tinyint(3) NOT NULL,
+  KEY `camp0` (`camp0`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=38 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios`
+-- 
+
+INSERT INTO `usuarios` VALUES (2, 0, 'jimenez', 'jimenez', 'jimenez', 'jimenez', '', '', NULL, '', NULL, '', NULL, 0, 0, 0, '', '', NULL, '', '', 0, '', '', 0);
+INSERT INTO `usuarios` VALUES (3, 0, 'user4', 'user4', 'user4', 'user4', 'CARLOS PEREZ', '', NULL, 'Peru', 'Lima metropolitana', '', NULL, 0, 0, 0, '', '', NULL, '03355588', 'perfilxxx', 0, '', '', 0);
+INSERT INTO `usuarios` VALUES (4, 0, 'carlos21', 'carlos21', 'carlos21', 'carlos21', '', '', NULL, '', '', '', NULL, 0, 0, 0, '', '', NULL, '', '', 0, '295', '', 0);
+INSERT INTO `usuarios` VALUES (5, 1, 'jimenez2', 'jimenez2', 'jimenez2', 'jimenez2', '', '', NULL, '', NULL, '', NULL, 0, 0, 0, '', '', NULL, '', '', 0, '', '', 0);
+INSERT INTO `usuarios` VALUES (9, 0, 'a1', 'a1', 'a1', 'a1', '', '', NULL, 'PERU', 'LIMA', '', NULL, 0, 0, 0, '3-7-2014', '', NULL, '', '', 0, '', '', 0);
